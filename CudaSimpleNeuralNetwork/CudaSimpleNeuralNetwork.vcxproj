@@ -88,6 +88,10 @@
     <ClCompile Include="CustomCudaArray.cpp" />
     <ClCompile Include="DataSet.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\train-images.idx3-ubyte" />
+    <None Include="data\train-labels.idx1-ubyte" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.targets" />

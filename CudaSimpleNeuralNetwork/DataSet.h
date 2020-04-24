@@ -7,6 +7,8 @@
 
 class DataSet
 {
+private:
+	uint32_t getInt32(char* inpArr);
 public:
 	DataSet();
 	~DataSet();
@@ -15,6 +17,8 @@ public:
 	{
 		CustomCudaArray image;
 		CustomCudaArray label;
+
+		data() : image(CustomCudaArray(28, 28 * 60000)), label(CustomCudaArray(1 * 60000)) {}
 	};
 
 	std::vector<data> training_data;

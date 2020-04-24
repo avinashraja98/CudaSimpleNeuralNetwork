@@ -1,10 +1,6 @@
 #include "CustomCudaArray.h"
 #include "cuda_runtime.h"
 
-CustomCudaArray::CustomCudaArray(size_t size) : CustomCudaArray(size, 1)
-{	
-}
-
 CustomCudaArray::CustomCudaArray(size_t sizeX, size_t sizeY)
 {
 	float *memory = nullptr;

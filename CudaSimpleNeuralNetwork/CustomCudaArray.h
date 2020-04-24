@@ -5,7 +5,6 @@
 class CustomCudaArray
 {
 public:
-	CustomCudaArray(size_t size = 1);
 	CustomCudaArray(size_t sizeX = 1, size_t sizeY = 1);
 	~CustomCudaArray();
 
