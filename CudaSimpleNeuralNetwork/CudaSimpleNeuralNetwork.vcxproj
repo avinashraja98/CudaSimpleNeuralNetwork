@@ -81,9 +81,11 @@
     <CudaCompile Include="kernel.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomCudaArray.h" />
     <ClInclude Include="DataSet.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CustomCudaArray.cpp" />
     <ClCompile Include="DataSet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
