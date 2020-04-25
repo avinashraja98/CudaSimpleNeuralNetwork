@@ -3,9 +3,10 @@
 
 CustomCudaArray::CustomCudaArray(size_t sizeX, size_t sizeY)
 {
-	float *memory = nullptr;
-	cudaMallocManaged(&memory, sizeX * sizeY * sizeof(float));
-	dataPtr = std::shared_ptr<float>(memory, [&](float* ptr) {cudaFree(ptr); });
+	//float *memory = nullptr;
+	//cudaMallocManaged(&memory, sizeX * sizeY * sizeof(float));
+	//dataPtr = std::shared_ptr<float>(memory, [&](float* ptr) {cudaDeviceSynchronize(); cudaFree(ptr); });
+	dataPtr = std::shared_ptr<float>(new float[sizeX * sizeY], [&](float* ptr) { delete[] ptr; });
 }
 
 

@@ -18,7 +18,7 @@ public:
 		CustomCudaArray image;
 		CustomCudaArray label;
 
-		data() : image(CustomCudaArray(28, 28 * 60000)), label(CustomCudaArray(1 * 60000)) {}
+		data() : image(CustomCudaArray(28, 28)), label(CustomCudaArray(1)) {}
 	};
 
 	std::vector<data> training_data;

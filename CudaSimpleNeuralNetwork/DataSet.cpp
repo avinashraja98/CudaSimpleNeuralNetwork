@@ -42,7 +42,7 @@ DataSet::DataSet()
 		trainImgFile.read((char*)&buf, sizeof(buf));
 		count = getInt32(buf);
 		trainLabelFile.read((char*)&buf, sizeof(buf));
-		if (getInt32(buf) != count)
+		if (getInt32(buf) != count && count != 60000)
 		{
 			// error count mismatch
 			trainImgFile.close();
@@ -65,23 +65,23 @@ DataSet::DataSet()
 
 		// Get data and build object
 		// cudaMallocManaged crashes if called multiple times. So now its called once.
-		data currentExample;
+		//data currentExample;
 		for (int k = 0; k < count; k++)
 		{
 			char labelBuf;
 			char imgBuf[28 * 28];
 			
-
+			data currentExample;
 			trainImgFile.read((char*)&imgBuf, sizeof(imgBuf));
 			for (int i = 0; i < 28 * 28; i++) {
 				currentExample.image[i] = (float)((unsigned char)imgBuf[i]) / 255.0;
 			}
 
 			trainLabelFile.read((char*)&labelBuf, sizeof(labelBuf));			
-			currentExample.label[k] = (float)((unsigned char)labelBuf);
-			
+			currentExample.label[0] = (float)((unsigned char)labelBuf);
+			training_data.push_back(currentExample);
 		}
-		training_data.push_back(currentExample);
+		//training_data.push_back(currentExample);
 		trainImgFile.close();
 		trainLabelFile.close();
 	}
