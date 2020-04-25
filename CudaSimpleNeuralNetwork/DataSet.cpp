@@ -66,7 +66,7 @@ std::vector<DataSet::data> DataSet::extractData(char * imgFile, char * lblFile)
 		}
 
 		// Get data and build object
-		for (int k = 0; k < count; k++)
+		for (size_t k = 0; k < count; k++)
 		{
 			char labelBuf;
 			char imgBuf[28 * 28];
@@ -74,14 +74,14 @@ std::vector<DataSet::data> DataSet::extractData(char * imgFile, char * lblFile)
 			data currentExample;
 			imgFilePtr.read((char*)&imgBuf, sizeof(imgBuf));
 			for (int i = 0; i < 28 * 28; i++) {
-				currentExample.image[i] = (float)((unsigned char)imgBuf[i]) / 255.0;
+				currentExample.image[i] = (float)((unsigned char)imgBuf[i]) / (float)255;
 			}
 
 			labelFilePtr.read((char*)&labelBuf, sizeof(labelBuf));
 			float currentLabel = (float)((unsigned char)labelBuf);
 			for (int j = 0; j < 10; j++)
 			{
-				currentExample.label[j] = (int)currentLabel == j ? 1 : 0;
+				currentExample.label[j] = (int)currentLabel == j ? (float)1 : (float)0;
 			}
 			out.push_back(currentExample);
 		}
