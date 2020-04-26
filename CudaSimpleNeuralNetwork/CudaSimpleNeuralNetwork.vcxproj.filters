@@ -5,12 +5,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataSet.cpp" />
+    <ClCompile Include="CustomCudaArray.cpp" />
+    <ClCompile Include="Activation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSet.h" />
+    <ClInclude Include="CustomCudaArray.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Activation.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\train-images.idx3-ubyte" />
     <None Include="data\train-labels.idx1-ubyte" />
+    <None Include="data\t10k-images.idx3-ubyte" />
+    <None Include="data\t10k-labels.idx1-ubyte" />
   </ItemGroup>
 </Project>

@@ -81,14 +81,19 @@
     <CudaCompile Include="kernel.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Activation.h" />
     <ClInclude Include="CustomCudaArray.h" />
     <ClInclude Include="DataSet.h" />
+    <ClInclude Include="Layer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Activation.cpp" />
     <ClCompile Include="CustomCudaArray.cpp" />
     <ClCompile Include="DataSet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\t10k-images.idx3-ubyte" />
+    <None Include="data\t10k-labels.idx1-ubyte" />
     <None Include="data\train-images.idx3-ubyte" />
     <None Include="data\train-labels.idx1-ubyte" />
   </ItemGroup>

@@ -79,6 +79,7 @@ std::vector<DataSet::data> DataSet::extractData(char * imgFile, char * lblFile)
 
 			labelFilePtr.read((char*)&labelBuf, sizeof(labelBuf));
 			float currentLabel = (float)((unsigned char)labelBuf);
+			// Make label one-hot
 			for (int j = 0; j < 10; j++)
 			{
 				currentExample.label[j] = (int)currentLabel == j ? (float)1 : (float)0;

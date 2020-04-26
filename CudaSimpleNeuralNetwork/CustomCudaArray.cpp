@@ -1,7 +1,7 @@
 #include "CustomCudaArray.h"
 #include "cuda_runtime.h"
 
-CustomCudaArray::CustomCudaArray(size_t sizeX, size_t sizeY)
+CustomCudaArray::CustomCudaArray(size_t sizeX, size_t sizeY) : x(sizeX), y(sizeY)
 {
 	//float *memory = nullptr;
 	//cudaMallocManaged(&memory, sizeX * sizeY * sizeof(float));
@@ -20,4 +20,14 @@ float& CustomCudaArray::operator[](const int index) {
 
 const float& CustomCudaArray::operator[](const int index) const {
 	return dataPtr.get()[index];
+}
+
+size_t CustomCudaArray::getX()
+{
+	return this->x;
+}
+
+size_t CustomCudaArray::getY()
+{
+	return this->y;
 }
