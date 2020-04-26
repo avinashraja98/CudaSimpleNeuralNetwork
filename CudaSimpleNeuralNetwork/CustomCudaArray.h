@@ -10,6 +10,7 @@ public:
 	CustomCudaArray(size_t sizeX = 1, size_t sizeY = 1);
 	~CustomCudaArray();
 
+	void resizeAndReset(size_t sizeX = 1, size_t sizeY = 1);
 	std::shared_ptr<float[]> dataPtr;
 
 	float& operator[](const int index);
@@ -17,5 +18,6 @@ public:
 
 	size_t getX();
 	size_t getY();
+	size_t getSize();
 };
 

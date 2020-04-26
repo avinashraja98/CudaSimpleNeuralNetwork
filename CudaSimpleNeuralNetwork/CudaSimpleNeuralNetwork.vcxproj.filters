@@ -6,13 +6,17 @@
   <ItemGroup>
     <ClCompile Include="DataSet.cpp" />
     <ClCompile Include="CustomCudaArray.cpp" />
-    <ClCompile Include="Activation.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="ReLUActivation.cpp" />
+    <ClCompile Include="NNetwork.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSet.h" />
     <ClInclude Include="CustomCudaArray.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Activation.h" />
+    <ClInclude Include="ReLUActivation.h" />
+    <ClInclude Include="NNetwork.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\train-images.idx3-ubyte" />

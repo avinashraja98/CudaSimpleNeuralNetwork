@@ -14,6 +14,14 @@ CustomCudaArray::~CustomCudaArray()
 {
 }
 
+void CustomCudaArray::resizeAndReset(size_t sizeX, size_t sizeY)
+{
+	x = sizeX;
+	y = sizeY;
+
+	dataPtr.reset(new float[sizeX * sizeY], [&](float* ptr) { delete[] ptr; });
+}
+
 float& CustomCudaArray::operator[](const int index) {
 	return dataPtr.get()[index];
 }
@@ -30,4 +38,9 @@ size_t CustomCudaArray::getX()
 size_t CustomCudaArray::getY()
 {
 	return this->y;
+}
+
+size_t CustomCudaArray::getSize()
+{
+	return this->y * this->x;
 }
