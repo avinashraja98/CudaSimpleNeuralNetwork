@@ -66,26 +66,31 @@ std::vector<DataSet::data> DataSet::extractData(char * imgFile, char * lblFile)
 		}
 
 		// Get data and build object
-		for (size_t k = 0; k < count; k++)
+		for (size_t l = 0; l < 6; l++)
 		{
-			char labelBuf;
-			char imgBuf[28 * 28];
-
 			data currentExample;
-			imgFilePtr.read((char*)&imgBuf, sizeof(imgBuf));
-			for (int i = 0; i < 28 * 28; i++) {
-				currentExample.image[i] = (float)((unsigned char)imgBuf[i]) / (float)255;
-			}
-
-			labelFilePtr.read((char*)&labelBuf, sizeof(labelBuf));
-			float currentLabel = (float)((unsigned char)labelBuf);
-			// Make label one-hot
-			for (int j = 0; j < 10; j++)
+			for (size_t k = 0; k < 1000; k++)
 			{
-				currentExample.label[j] = (int)currentLabel == j ? (float)1 : (float)0;
+				char labelBuf;
+				char imgBuf[28 * 28];
+
+
+				imgFilePtr.read((char*)&imgBuf, sizeof(imgBuf));
+				for (int i = 0; i < 28 * 28; i++) {
+					currentExample.image[i * 1000 + k] = (float)((unsigned char)imgBuf[i]) / (float)255;
+				}
+
+				labelFilePtr.read((char*)&labelBuf, sizeof(labelBuf));
+				float currentLabel = (float)((unsigned char)labelBuf);
+				// Make label one-hot
+				for (int j = 0; j < 10; j++)
+				{
+					currentExample.label[j * 1000 + k] = (int)currentLabel == j ? (float)1 : (float)0;
+				}				
 			}
 			out.push_back(currentExample);
 		}
+
 		imgFilePtr.close();
 		labelFilePtr.close();
 	}

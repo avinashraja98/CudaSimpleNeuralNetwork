@@ -16,6 +16,10 @@ int main()
 
 	NNetwork net;
 	net.addLayer(new Layer("hiddenLayer1", 28 * 28, 32, ActivationTypes::ReLU));
+
+	CustomCudaArray Z = net.forward(d.training_data.front().image);
+
+	int a = 1;
 	
 	return 0;
 }

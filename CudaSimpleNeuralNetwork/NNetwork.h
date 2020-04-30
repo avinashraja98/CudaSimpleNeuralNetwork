@@ -17,5 +17,7 @@ public:
 	~NNetwork();
 
 	void addLayer(Layer* layer);
+
+	CustomCudaArray forward(CustomCudaArray X);
 };
 

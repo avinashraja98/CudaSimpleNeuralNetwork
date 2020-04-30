@@ -84,14 +84,16 @@
     <ClInclude Include="Activation.h" />
     <ClInclude Include="CustomCudaArray.h" />
     <ClInclude Include="DataSet.h" />
-    <ClInclude Include="Layer.h" />
+    <CudaCompile Include="Layer.h" />
     <ClInclude Include="NNetwork.h" />
     <ClInclude Include="ReLUActivation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CustomCudaArray.cpp" />
     <ClCompile Include="DataSet.cpp" />
-    <ClCompile Include="Layer.cpp" />
+    <CudaCompile Include="Layer.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
     <ClCompile Include="NNetwork.cpp" />
     <ClCompile Include="ReLUActivation.cpp" />
   </ItemGroup>

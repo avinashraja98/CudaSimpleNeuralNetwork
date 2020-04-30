@@ -2,18 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="Layer.cu" />
+    <CudaCompile Include="Layer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataSet.cpp" />
     <ClCompile Include="CustomCudaArray.cpp" />
-    <ClCompile Include="Layer.cpp" />
     <ClCompile Include="ReLUActivation.cpp" />
     <ClCompile Include="NNetwork.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSet.h" />
     <ClInclude Include="CustomCudaArray.h" />
-    <ClInclude Include="Layer.h" />
     <ClInclude Include="Activation.h" />
     <ClInclude Include="ReLUActivation.h" />
     <ClInclude Include="NNetwork.h" />
